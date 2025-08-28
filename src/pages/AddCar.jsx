@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import CarForm from '../components/CarForm';
-import { saveCar } from '../store/slices/carsSlice.js';
+import { getCars, saveCar } from '../store/slices/carsSlice.js';
 import {toast} from "react-toastify"; // Import saveCar action
 
 const AddCar = () => {
@@ -25,7 +25,6 @@ const AddCar = () => {
     });
 
     const handleSubmit = (values) => {
-        console.log("Submitting car data:", values);
         dispatch(saveCar(values));
         toast.success("✅ Car Add Successfully.", {
             position: "top-right",
@@ -38,7 +37,8 @@ const AddCar = () => {
             theme: "colored",
             style: { backgroundColor: "#003366", color: "#ffffff" }, // Dark Blue Background & White Text
         });
-// Dispatch the saveCar action
+        // Dispatch the saveCar action
+        dispatch(getCars())
         navigate('/cars'); // Redirect after submission
     };
 

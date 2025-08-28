@@ -28,7 +28,7 @@ const Header = () => {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <h1 className="text-lg font-bold animate-pulse transition-transform duration-500 ease-in-out">
-              KMW CAR RENTAL PVT(LTD)
+              PD CAR RENTAL PVT(LTD)
             </h1>
 
             {/* User Section */}

@@ -32,6 +32,7 @@ const Customers = () => {
     if (window.confirm('Are you sure you want to delete this customer?')) {
       console.log("customer Number",id)
       dispatch(deleteCustomer(id));
+      dispatch(getCustomers());
       toast.success("✅ Customer Remove Successfully!.", {
         position: "top-right",
         autoClose: 3000,
@@ -47,8 +48,8 @@ const Customers = () => {
     }
   };
 
-  const handleAddCustomer = (values) => {
-    dispatch(saveCustomer(values));
+  const handleAddCustomer  = async (values) => {
+    dispatch(await saveCustomer(values));
     toast.success("✅ Customer Add Successfully!.", {
       position: "top-right",
       autoClose: 3000,
